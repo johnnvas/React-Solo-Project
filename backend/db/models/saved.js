@@ -2,13 +2,13 @@
 module.exports = (sequelize, DataTypes) => {
   const Saved = sequelize.define('Saved', {
     userId: {
-        type: Sequelize.INTEGER
+        type: DataTypes.INTEGER
       },
       imageId: {
-        type: Sequelize.INTEGER
+        type: DataTypes.INTEGER
       },
       locationId: {
-        type: Sequelize.STRING
+        type: DataTypes.STRING
       },
   }, {});
   Saved.associate = function(models) {

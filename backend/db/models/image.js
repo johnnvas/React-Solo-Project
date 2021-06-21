@@ -2,19 +2,19 @@
 module.exports = (sequelize, DataTypes) => {
   const Image = sequelize.define('Image', {
   userId: {
-        type: Sequelize.INTEGER
+        type: DataTypes.INTEGER
       },
       albumId: {
-        type: Sequelize.INTEGER
+        type: DataTypes.INTEGER
       },
       imageUrl: {
-        type: Sequelize.STRING
+        type: DataTypes.STRING
       },
       caption: {
-        type: Sequelize.STRING
+        type: DataTypes.STRING
       },
       location: {
-        type: Sequelize.STRING
+        type: DataTypes.STRING
       }
   }, {});
   Image.associate = function(models) {
