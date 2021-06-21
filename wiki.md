@@ -8,14 +8,14 @@
 
 # Feed
 
-- All users can view their feed which is made up of pictures the people they follow upload or any hastags or liked topics the user follows or likes.
+- All users can view their feed, which has random images or albums that anyone has posted
 - All users can search images using themes or descriptions
 
 # Photos
 
 - Only logged in users can upload and edit images or videos.
 - Logged in users can add descriptions or captions and hastags to their images.
-- Users can view pictures uploaded by the people they follow in their home feed.
+- Users can view pictures uploaded by the people in their home feed.
 - When logged in users can click on any post on their feed they will be directed to the post page, which from there you can also access that users page as well.
 - Users can click on a profile name in their feed and they will be directed to that profile page.
 

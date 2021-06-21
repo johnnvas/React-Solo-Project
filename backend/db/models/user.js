@@ -16,6 +16,14 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
     },
+    firstName: {
+        allowNull: false,
+        type: Sequelize.STRING(30)
+      },
+      lastName: {
+        allowNull: false,
+        type: Sequelize.STRING(30)
+      },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -46,7 +54,7 @@ module.exports = (sequelize, DataTypes) => {
       },
     },
     });
-  
+
   User.prototype.toSafeObject = function() { // remember, this cannot be an arrow function
   const { id, username, email } = this; // context will be the User instance
   return { id, username, email };
