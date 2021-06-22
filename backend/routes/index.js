@@ -2,8 +2,15 @@
 const express = require('express');
 const router = express.Router();
 const apiRouter = require('./api');
+const usersRouter = require('./api/users')
+const sessionRouter = require('./api/session')
+const indexRouter = require('./api/index')
+
 
 router.use('/api', apiRouter);
+router.use('/api/session', sessionRouter);
+router.use(indexRouter)
+router.use('/api/users', usersRouter);
 
 // Static routes
 // Serve React build files in production

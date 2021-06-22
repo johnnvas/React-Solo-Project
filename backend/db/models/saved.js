@@ -13,6 +13,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Saved.associate = function(models) {
     // associations can be defined here
+    Saved.belongsTo(models.User, { foreignKey: 'userId' })
+    Saved.belongsTo(models.Image, {foreignKey: 'imageId'})
   };
   return Saved;
 };
