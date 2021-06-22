@@ -17,10 +17,10 @@ module.exports = (sequelize, DataTypes) => {
       },
     },
     firstName: {
-        allowNull: false,
+      allowNull: false,
         type: DataTypes.STRING(30)
       },
-      lastName: {
+    lastName: {
         allowNull: false,
         type: DataTypes.STRING(30)
       },
@@ -83,10 +83,12 @@ module.exports = (sequelize, DataTypes) => {
   }
   };
 
-  User.signup = async function ({ username, email, password }) {
+  User.signup = async function ({ username, firstName, lastName, email, password }) {
   const hashedPassword = bcrypt.hashSync(password);
   const user = await User.create({
     username,
+    firstName,
+    lastName,
     email,
     hashedPassword,
   });
@@ -95,6 +97,10 @@ module.exports = (sequelize, DataTypes) => {
 
   User.associate = function(models) {
     // associations can be defined here
+    User.hasMany(models.Comment, { foreignKey: 'userId' });
+    User.hasMany(models.Image, { foreignKey: 'userId' });
+    User.hasMany(models.Saved, { foreignKey: 'userId' });
+    User.hasMany(models.Album, { foreignKey: 'userId' });
   };
 
   return User;

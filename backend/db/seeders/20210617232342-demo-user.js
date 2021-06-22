@@ -7,21 +7,21 @@ module.exports = {
     return queryInterface.bulkInsert('Users', [
       {
         email: 'demo@user.io',
-        userName: 'Demo-lition',
+        username: 'Demo-lition',
         firstName: 'Demo',
         lastName: 'Lition',
         hashedPassword: bcrypt.hashSync('password'),
       },
       {
         email: faker.internet.email(),
-        userName: 'FakeUser1',
+        username: 'FakeUser1',
         firstName: 'Faker',
         lastName: 'One',
         hashedPassword: bcrypt.hashSync(faker.internet.password()),
       },
       {
         email: faker.internet.email(),
-        userName: 'FakeUser2',
+        username: 'FakeUser2',
         firstName: 'Faker',
         lastName: 'Two',
         hashedPassword: bcrypt.hashSync(faker.internet.password()),
