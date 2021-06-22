@@ -1,9 +1,11 @@
-#root {
+/* #root {
     --navbar-bg-color: rgba(0, 0, 0, 0.9);
     --navbar-text-color: hsl(0, 0%, 85%);
     --navbar-text-color-focus: white;
     --navbar-bg-contrast: hsl(0, 0%, 25%);
-}
+} */
+
+
 
 * {
     box-sizing: border-box;
@@ -12,18 +14,13 @@
 }
 
 body {
-    height: 100vh;
+    height: 200vh;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
 }
 
-li {
-    margin: 0.4em;
-    width: 100%;
-    justify-content: space-between;
-}
-
 .navbar-container {
+    background-color: gray;
     display: flex;
     justify-content: space-between;
     height: 100%;

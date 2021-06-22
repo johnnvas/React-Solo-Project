@@ -6,6 +6,7 @@ import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import Homepage from "./components/Homepage";
+import UploadImage from "./components/UploadImage"
 
 function App() {
   const dispatch = useDispatch();
@@ -19,14 +20,21 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
+
           <Route path="/" exact>
             <Homepage />
           </Route>
+
           <Route path="/signup">
             <SignupFormPage />
           </Route>
-           <Route path="/login">
-            <SignupFormPage />
+
+           {/* <Route path="/login">
+            <Homepage />
+          </Route> */}
+
+          <Route path="/upload">
+            <UploadImage />
           </Route>
 
         </Switch>

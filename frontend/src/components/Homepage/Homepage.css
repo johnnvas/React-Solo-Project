@@ -1,3 +1,15 @@
-/* body{
-    background-color:blue;
-} */
+  body {
+      margin: 0;
+  }
+  
+  .img1 {
+      background-image: url("../../images/beach.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 100vh;
+  }
+
+  .home {
+      background-color: white;
+      height: 1000px;
+  }
