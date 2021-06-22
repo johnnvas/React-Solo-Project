@@ -8,6 +8,7 @@ import Navigation from "./components/Navigation";
 import Homepage from "./components/Homepage";
 import UploadImage from "./components/UploadImage"
 
+
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -29,13 +30,10 @@ function App() {
             <SignupFormPage />
           </Route>
 
-           {/* <Route path="/login">
-            <Homepage />
-          </Route> */}
-
           <Route path="/upload">
             <UploadImage />
           </Route>
+
 
         </Switch>
       )}

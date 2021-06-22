@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import './Homepage.css';
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom';
 // import * as uploadActions from "../../store/upload";
 // import Navigation from "./Navigation/index";
+
 
 
 export default function Homepage() {
@@ -11,38 +12,32 @@ export default function Homepage() {
     const loggedIn = useSelector(state => state.session).user;
     const [getImg, setGetImg] = useState('');
 
-
-
-
-    // const onSubmit = (e) => {
-    //     e.preventDefault();
-    //     return dispatch(uploadActions.uploadImage({getImg}))
-    // }
+     useEffect(() => {
+        let image = document.getElementById("home-container")
+        const images = ["img1", "img2", "img3", "img4", "img5", "img6"]
+        setInterval(function(){
+            let random = Math.floor(Math.random() * 6);
+            image.className = images[random]
+        }, 3000);
+    }, [])
 
     if (loggedIn) {
         return (
             <>
                 <div className='home-form'>
-
-                    {/* <form calssName='img-form'onSubmit={onSubmit}>
-                        <label htmlFor='img'>Select Image </label>
-                        <input
-                            type='file'
-                            id="img"
-                            accept='image/*'
-                            value={getImg}
-                            onChange={e => setGetImg(e.target.value)}
-                        />
-                        <input type='submit'></input>
-                    </form> */}
+                    Welcome Home
                 </div>
             </>
         )
-    } else {
+    }
+
+    else {
         return (
-            <div className='img1' >
+            <div className='img1' id='home-container' >
+                <div>
+                </div>
              </div>
-    )
+        )
 
     }
 

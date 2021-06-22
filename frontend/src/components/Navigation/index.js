@@ -31,7 +31,9 @@ function Navigation({ isLoaded }){
   return (
     <nav className='navbar-container'>
         <div className='logo'>
-          <NavLink exact to="/">Beach Bumz</NavLink>
+          <NavLink exact to="/">
+           <div className='aa-image'></div>
+          </NavLink>
         </div>
       <div>
         {isLoaded && sessionLinks}
