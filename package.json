@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/johnnvas/React-Solo-Project/issues"
   },
-  "homepage": "https://github.com/johnnvas/React-Solo-Project#readme"
+  "homepage": "https://github.com/johnnvas/React-Solo-Project#readme",
+  "dependencies": {
+    "react-background-slider": "^2.0.0"
+  }
 }

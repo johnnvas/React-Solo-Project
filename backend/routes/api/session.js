@@ -21,7 +21,6 @@ const validateLogin = [
 
 
 const router = express.Router()
-
 // Log in
 router.post(
   '/',
