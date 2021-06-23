@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import './Navigation.css';
-import '../Homepage/Homepage.css';
+// import '../Homepage/Homepage.css';
 
 function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
@@ -14,7 +14,7 @@ function Navigation({ isLoaded }){
   if (sessionUser) {
     sessionLinks = (
       <>
-        <div className='btns'>
+        <div>
               <NavLink to='/upload-image' className='container'>
                  <div className='upload'>
                   </div>

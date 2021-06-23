@@ -20,8 +20,9 @@ body {
 }
 
 .navbar-container {
-    background-color: gray;
     display: flex;
+    position: relative;
+    background-color: gray;
     justify-content: space-between;
     height: 100%;
     align-items: center;
