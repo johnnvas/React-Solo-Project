@@ -13,7 +13,15 @@ function Navigation({ isLoaded }){
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <ProfileButton user={sessionUser} />
+      <>
+        <div className='btns'>
+              <NavLink to='/upload-image' className='container'>
+                 <div className='upload'>
+                  </div>
+              </NavLink>
+          <ProfileButton user={sessionUser} />
+        </div>
+      </>
     );
   } else {
     sessionLinks = (

@@ -36,7 +36,7 @@ export default function Homepage() {
             <div className='img1' id='home-container' >
                 <div>
                 </div>
-             </div>
+            </div>
         )
 
     }

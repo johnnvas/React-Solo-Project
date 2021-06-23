@@ -11,7 +11,9 @@ const { handleValidationErrors } = require('../../utils/validation');
 const router = express.Router()
 
 router.get('/', asyncHandler(async (req, res) => {
-    const images = await Image.findAll()
+    const images = await Image.findAll({
+        include: {User}
+    })
 
     return res.json(images)
 }))
