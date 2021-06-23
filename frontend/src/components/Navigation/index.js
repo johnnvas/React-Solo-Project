@@ -15,11 +15,11 @@ function Navigation({ isLoaded }){
     sessionLinks = (
       <>
         <div>
-              <NavLink to='/upload-image' className='container'>
-                 <div className='upload'>
-                  </div>
+            <ProfileButton user={sessionUser} />
+              <NavLink to='/upload' className='container'>
+              <button className='upload'>Upload</button>
+
               </NavLink>
-          <ProfileButton user={sessionUser} />
         </div>
       </>
     );
@@ -29,7 +29,7 @@ function Navigation({ isLoaded }){
         <LoginFormModal />
         <div>
           <NavLink to="/signup">
-            <button>Sign Up </button>
+            <button className='logout-button'>Sign Up </button>
           </NavLink>
         </div>
       </>

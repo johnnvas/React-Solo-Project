@@ -11,7 +11,7 @@ import Homepage from '../Homepage';
 function Upload() {
     const dispatch = useDispatch();
     const [imageUrl, setImageUrl] = useState('')
-    const [description, setDescription] = useState('')
+    const [caption, setCaption] = useState('')
     const sessionUser = useSelector((state) => state.session.user);
     const history = useHistory();
 
@@ -24,7 +24,7 @@ function Upload() {
         e.preventDefault();
         let userId = sessionUser.id;
         history.push('/')
-        return dispatch(uploadActions.uploadImage({ imageUrl, userId, description }))
+        return dispatch(uploadActions.uploadImage({ imageUrl, userId, caption }))
     }
     return (
 
@@ -46,14 +46,14 @@ function Upload() {
                 <br />
                 <textarea
                     type='text'
-                    value={description}
-                    onChange={e => setDescription(e.target.value)}
+                    value={caption}
+                    onChange={e => setCaption(e.target.value)}
                     required
                     rows="4"
                     cols="35"
                 />
             </label>
-            <button type="submit" >Upload Post!</button>
+            <button type="submit" >Upload Post</button>
         </form>
     )
 
