@@ -2,9 +2,9 @@ import './UploadImage.css'
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import * as uploadActions from "../../store/upload";
-import * as sessionActions from '../../store/session'
-import {useHistory, Link} from 'react-router-dom'
-import Homepage from '../Homepage'
+import * as sessionActions from '../../store/session';
+import { useHistory, Link } from 'react-router-dom';
+import Homepage from '../Homepage';
 
 
 
