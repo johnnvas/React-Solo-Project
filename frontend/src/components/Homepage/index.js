@@ -12,15 +12,6 @@ export default function Homepage() {
     const loggedIn = useSelector(state => state.session).user;
     const [getImg, setGetImg] = useState('');
 
-    //  useEffect(() => {
-    //     let image = document.getElementById("home-container")
-    //     const images = ["img1", "img2", "img3", "img4", "img5", "img6"]
-    //     setInterval(function(){
-    //         let random = Math.floor(Math.random() * 6);
-    //         image.className = images[random]
-    //     }, 3000);
-    // }, [])
-
     if (loggedIn) {
         return (
             <>
