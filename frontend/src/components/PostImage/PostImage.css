@@ -1,0 +1,9 @@
+.imageDiv{
+    height: 100px;
+    width: 100px;
+}
+
+.ind-image{
+    object-fit: contain;
+    width: 100%;
+}
