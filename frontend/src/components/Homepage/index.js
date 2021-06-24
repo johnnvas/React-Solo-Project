@@ -20,11 +20,11 @@ export default function Homepage() {
     if (loggedIn) {
         return (
             <div>
-                <div className='home-form'>
+                <div className='home-container'>
                     Welcome Home
                     {allImages && allImages.map((img) => {
                         <div key={img.id}>
-                            {console.log(img)}
+                            {console.log(img.imageUrl)}
                             <PostImage url={img.imageUrl}/>
                         </div>
                     })}

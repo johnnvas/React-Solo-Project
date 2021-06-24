@@ -19,7 +19,6 @@ router.get('/', asyncHandler(async (req, res) => {
 }))
 
 router.post('/', asyncHandler(async (req, res) => {
-    // console.log("HEEEEEEEEEREEEEEEEEEEEEE!!!!!!!!!!")
     const { imageUrl, userId, caption, albumId, location } = req.body;
     const uploadImage = await Image.create({
         imageUrl,

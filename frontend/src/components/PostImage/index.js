@@ -1,8 +1,8 @@
 export default function PostImage(url) {
 
     return (
-        <div>
-            <image href={url}></image>
+        <div className='imageDiv'>
+            <img className='ind-image' src={url}></img>
         </div>
     )
 }
