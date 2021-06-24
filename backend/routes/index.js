@@ -9,10 +9,10 @@ const uploadsRouter = require('./api/uploads')
 
 
 router.use('/api', apiRouter);
-router.use('/api/session', sessionRouter);
-router.use('/api/index', indexRouter)
-router.use('/api/users', usersRouter);
-router.use('/api/uploads', uploadsRouter);
+// router.use('/api/session', sessionRouter);
+// router.use('/api/index', indexRouter)
+// router.use('/api/users', usersRouter);
+// router.use('/api/uploads', uploadsRouter);
 
 // Static routes
 // Serve React build files in production
