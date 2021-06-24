@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import './Homepage.css';
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from 'react-router-dom';
+import { getImages } from '../../store/upload';
+import PostImage from '../PostImage';
 // import * as uploadActions from "../../store/upload";
 // import Navigation from "./Navigation/index";
 
@@ -10,15 +12,24 @@ import { Redirect } from 'react-router-dom';
 export default function Homepage() {
     const dispatch = useDispatch();
     const loggedIn = useSelector(state => state.session).user;
-    const [getImg, setGetImg] = useState('');
+    const allImages = useSelector(state => Object.values(state.images));
+    useEffect(() => {
+        dispatch(getImages())
+    }, [dispatch])
 
     if (loggedIn) {
         return (
-            <>
+            <div>
                 <div className='home-form'>
                     Welcome Home
+                    {allImages && allImages.map((img) => {
+                        <div key={img.id}>
+                            {console.log(img)}
+                            <PostImage url={img.imageUrl}/>
+                        </div>
+                    })}
                 </div>
-            </>
+            </div>
         )
     }
 

@@ -34,7 +34,7 @@ function SignupFormPage() {
   return (
     <div className="form_container">
         <div className="title_container">
-          <h2>Join Us!!</h2>
+          <h2>Join Our Community!</h2>
         </div>
           <form onSubmit={handleSubmit}>
             <ul>

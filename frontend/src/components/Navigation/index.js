@@ -17,7 +17,7 @@ function Navigation({ isLoaded }){
         <div>
             <ProfileButton user={sessionUser} />
               <NavLink to='/upload' className='container'>
-              <button className='upload'>Upload</button>
+              <button className='button upload'>Upload</button>
 
               </NavLink>
         </div>
