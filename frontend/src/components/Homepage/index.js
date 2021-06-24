@@ -23,10 +23,10 @@ export default function Homepage() {
                 <div className='home-container'>
                     Welcome Home
                     {allImages && allImages.map((img) => {
-                        <div key={img.id}>
-                            {console.log(img.imageUrl)}
-                            <PostImage url={img.imageUrl}/>
-                        </div>
+                        return (<div key={img.id}>
+                            {/* {console.log('IM HEEEEEEEEEEEREEE',img)} */}
+                            <PostImage url={img}/>
+                        </div>)
                     })}
                 </div>
             </div>

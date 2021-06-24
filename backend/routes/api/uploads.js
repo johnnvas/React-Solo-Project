@@ -32,14 +32,15 @@ router.post('/', asyncHandler(async (req, res) => {
 }))
 
 
-router.delete('/', asyncHandler(async (req, res) => {
+router.delete('/:id', asyncHandler(async (req, res) => {
     const { id } = req.body
 
-    await Image.destroy({
+    const deleteImage = await Image.destroy({
         where: {
             id
         }
     })
+    res.json(deleteImage)
 }))
 
 
