@@ -2,6 +2,7 @@ import { csrfFetch } from './csrf';
 
 const POST_IMAGE = 'upload/POST_IMAGE';
 const GET_IMAGE = 'upload/GET_IMAGE';
+const DELETE_IMAGE = 'upload/DELETE_IMAGE';
 
 const getImage = (images) => {
     return {
@@ -17,6 +18,15 @@ const postImage = (image) => {
     }
 }
 
+const delImage = (id) => {
+    return {
+        type: DELETE_IMAGE,
+        id
+    }
+}
+
+
+
 export const getImages = () => async (dispatch) => {
     const res = await fetch('/api/upload')
 
@@ -27,7 +37,7 @@ export const getImages = () => async (dispatch) => {
 }}
 
 export const uploadImage = (payload) => async (dispatch) => {
-    console.log("PAYLOAD!!!!", payload)
+    // console.log("PAYLOAD!!!!", payload)
     const res = await csrfFetch('/api/upload', {
         method: 'POST',
         body: JSON.stringify(payload),
@@ -39,6 +49,16 @@ export const uploadImage = (payload) => async (dispatch) => {
         dispatch(postImage(newImage));
         return newImage
     }
+}
+
+export const deleteImage = (id) => async (dispatch) => {
+    const res = await csrfFetch('/api/upload', {
+        method: 'DELETE',
+        body: JSON.stringify({id})
+    })
+    await res.json()
+    dispatch(delImage(id))
+    return res
 }
 
 const initialState = {}
@@ -57,6 +77,10 @@ const imageReducer = (state = initialState, action) => {
                 ...state,
                 [action.image.id]: action.image
             }
+            return newState
+        case DELETE_IMAGE:
+            newState = { ...state }
+            delete newState[action.id]
             return newState
         default:
             return state;
