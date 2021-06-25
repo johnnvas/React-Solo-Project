@@ -25,7 +25,7 @@ export default function Homepage() {
                     {allImages && allImages.map((img) => {
                         return (<div key={img.id}>
                             {/* {console.log('IM HEEEEEEEEEEEREEE',img)} */}
-                            <PostImage url={img}/>
+                            <PostImage image={img}/>
                         </div>)
                     })}
                 </div>

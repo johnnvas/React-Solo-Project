@@ -3,10 +3,11 @@ import { useSelector, useDispatch } from 'react-redux';
 import { deleteImage } from '../../store/upload';
 
 
-export default function PostImage(props) {
+export default function PostImage({image}) {
     const dispatch = useDispatch();
-    
-    const handleDeleteClick = (id) => {
+    const id = image.id
+
+    const handleDeleteClick = () => {
         dispatch(deleteImage(id))
     }
 
@@ -14,9 +15,9 @@ export default function PostImage(props) {
         <div className='imageDiv'>
             {/* {console.log('IM HEEEEEEEEEEEREEEE!!!', props)} */}
 
-            <img className='ind-image' src={props.url.imageUrl} />
-            <div>{props.url.location}</div>
-            <div>{props.url.caption}</div>
+            <img className='ind-image' src={image.imageUrl} />
+            <div>{image.location}</div>
+            <div>{image.caption}</div>
             <button type='button' onClick={handleDeleteClick}>DELETE</button>
         </div>
     )

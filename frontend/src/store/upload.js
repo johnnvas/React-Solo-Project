@@ -18,6 +18,13 @@ const postImage = (image) => {
     }
 }
 
+const delImage = (id) => {
+    return {
+        type: DELETE_IMAGE,
+        id
+    }
+}
+
 
 
 export const getImages = () => async (dispatch) => {
@@ -47,9 +54,10 @@ export const uploadImage = (payload) => async (dispatch) => {
 export const deleteImage = (id) => async (dispatch) => {
     const res = await csrfFetch('/api/upload', {
         method: 'DELETE',
+        body: JSON.stringify({id})
     })
     await res.json()
-    dispatch(deleteImage(id))
+    dispatch(delImage(id))
     return res
 }
 
@@ -71,10 +79,8 @@ const imageReducer = (state = initialState, action) => {
             }
             return newState
         case DELETE_IMAGE:
-            newState = {
-                ...state,
-                [action.image.id]: action.image
-            }
+            newState = { ...state }
+            delete newState[action.id]
             return newState
         default:
             return state;
