@@ -10,6 +10,10 @@
     margin-left: 200px;
 }
 
+.edit_container{
+    margin-left: 30px;
+}
+
 .button {
     background-color: #f1bb4e;
     display: inline-block;
