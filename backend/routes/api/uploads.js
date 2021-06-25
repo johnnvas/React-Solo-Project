@@ -31,6 +31,15 @@ router.post('/', asyncHandler(async (req, res) => {
     return res.json(uploadImage);
 }))
 
+router.patch('/', asyncHandler(async (req, res) => {
+    const { caption, id } = req.body
+    const image = await Image.findByPk(id)
+
+    await image.update({ caption })
+
+    return res.json(image)
+}))
+
 
 router.delete('/', asyncHandler(async (req, res) => {
     const { id } = req.body
