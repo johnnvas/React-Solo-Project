@@ -61,6 +61,18 @@ export const deleteImage = (id) => async (dispatch) => {
     return res
 }
 
+export const updateImage = (image) => async (dispatch) => {
+    const res = await csrfFetch('/api/upload', {
+        method: 'PATCH',
+        body: JSON.stringify(image)
+    })
+    const data = await res.json()
+    console.log('---------> THIS IS RES!', res)
+    console.log('------> THIS IS DATAAAAA!', data)
+    dispatch(postImage(data))
+    return data
+}
+
 const initialState = {}
 
 const imageReducer = (state = initialState, action) => {
