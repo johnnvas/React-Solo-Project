@@ -1,12 +1,12 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
 
-const { setTokenCookie, restoreUser } = require('../../utils/auth');
-const { User, Image, Album } = require('../../db/models');
+// const { setTokenCookie, restoreUser } = require('../../utils/auth');
+const { User, Image,  } = require('../../db/models');
 
 
-const { check } = require('express-validator');
-const { handleValidationErrors } = require('../../utils/validation');
+// const { check } = require('express-validator');
+// const { handleValidationErrors } = require('../../utils/validation');
 
 const router = express.Router()
 
@@ -35,9 +35,10 @@ router.patch('/', asyncHandler(async (req, res) => {
     const { caption, id } = req.body
     const image = await Image.findByPk(id)
 
-    await image.update({ caption })
+    const newImage = await image.update({ caption })
+    console.log("HEEEERRREEEEEE", newImage)
 
-    return res.json(image)
+    return res.json(newImage)
 }))
 
 
