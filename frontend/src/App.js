@@ -7,6 +7,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import Homepage from "./components/Homepage";
 import UploadImage from "./components/UploadImage"
+import ImagePage from "./components/ImagePage";
 
 
 function App() {
@@ -34,6 +35,9 @@ function App() {
             <UploadImage />
           </Route>
 
+          <Route path="/image/:id">
+            <ImagePage />
+          </Route>
 
         </Switch>
       )}

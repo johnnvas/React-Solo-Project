@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import {Link} from 'react-router-dom';
 import { deleteImage } from '../../store/upload';
 import EditImage from '../EditImage'
 
@@ -18,11 +19,12 @@ export default function PostImage({image}) {
             {/* {console.log('IM HEEEEEEEEEEEREEEE!!!', props)} */}
 
             <div className='picture'>
-                {/* <Link to={'/images/'}>
-                </Link> */}
+                <Link to={`/image/${image.id}`}>
                     <img className='ind-image' src={image.imageUrl} />
+                </Link>
             </div>
 
+            {/* <div>{image.userId}</div> */}
             <div>{image.location}</div>
             <div>{image.caption}</div>
 
