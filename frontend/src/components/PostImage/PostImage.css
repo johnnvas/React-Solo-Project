@@ -7,4 +7,5 @@
 .ind-image{
     object-fit: contain;
     width: 100%;
+    border-bottom: 1px solid black;
 }
