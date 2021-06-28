@@ -2,7 +2,7 @@ const express = require('express');
 const asyncHandler = require('express-async-handler');
 
 // const { setTokenCookie, restoreUser } = require('../../utils/auth');
-const { User, Image,  } = require('../../db/models');
+const { User, Image, Comment} = require('../../db/models');
 
 
 // const { check } = require('express-validator');
@@ -44,7 +44,10 @@ router.patch('/', asyncHandler(async (req, res) => {
 
 router.delete('/', asyncHandler(async (req, res) => {
     const { id } = req.body
+    await Comment.destroy({
 
+        where:{imageId: id}
+    })
     const deleteImage = await Image.destroy({
         where: {
             id

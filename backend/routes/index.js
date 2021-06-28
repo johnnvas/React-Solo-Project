@@ -2,10 +2,6 @@
 const express = require('express');
 const router = express.Router();
 const apiRouter = require('./api');
-const usersRouter = require('./api/users')
-const sessionRouter = require('./api/session')
-const indexRouter = require('./api/index')
-const uploadsRouter = require('./api/uploads')
 
 
 router.use('/api', apiRouter);

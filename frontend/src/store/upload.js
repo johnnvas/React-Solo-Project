@@ -67,8 +67,6 @@ export const updateImage = (image) => async (dispatch) => {
         body: JSON.stringify(image)
     })
     const data = await res.json()
-    console.log('---------> THIS IS RES!', res)
-    console.log('------> THIS IS DATAAAAA!', data)
     dispatch(postImage(data))
     return data
 }
